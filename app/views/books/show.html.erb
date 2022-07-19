@@ -1,0 +1,24 @@
+<%= flash[:notice] %>
+
+<p>
+<strong>title:</strong>
+<%= @book.title %>
+</p>
+
+<p>
+<strong>body:</strong>
+<%= @book.body %>
+</p>
+
+<%= link_to "edit", edit_book_path(@book.id) %>
+
+<%= link_to "back", { :action => "index" }, :method => "get"  %>
+
+
+<div>
+  <%= image_tag @book.get_image %>
+  <p>ショップ名：<%= @book.title %></p>
+  <p>説明：<%= @book.body %></p>
+  <p>投稿ユーザー画像：<%= image_tag 'sample-author1.jpg' %>
+  <p>ユーザーネーム：<%= @book.user.name %></p>
+</div>
